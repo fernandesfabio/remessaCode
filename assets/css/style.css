@@ -1,0 +1,127 @@
+
+@layer geral {
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    :root {
+        --green-gradient: linear-gradient(180deg, #278848 0%, #59a928 100%);
+        --white: #fff;
+        --gray-400: #9ca4ab;
+        --gray-100: #fafafa;
+        --gray-shadow: #07070783;
+        --christi-400: #80d14a;
+        --christi-300: #a2e175;
+        --christi-500: #59a928;
+        --black-700: #212121;
+        --black-800: #0d0c0f;
+        --gray-500: rgba(85, 85, 85, 0.55);
+        --blue-500: #3333e7;
+        --blue-800: #191991;
+        --dove-gray-900: #3d3d3d;
+        --font-primary: 'Montserrat', sans-serif;
+        --font-secondary: 'Poppins', sans-serif;
+      }
+      
+    body {
+        font-family: var(--font-secondary);
+        background-color: var(--white);
+        height: 500vh;
+    }
+
+}
+
+@layer header {
+    header {
+        width: 100%;
+        font-weight: 700;
+        z-index: 9999;
+        position: fixed;
+        background-color: var(--white);
+        box-shadow: 0px 2px 10px var(--gray-shadow);
+        margin-bottom: 2rem;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 8%;
+        
+    }
+    .logo{
+        display: flex;
+        align-items: center;
+        justify-content: first baseline;
+        gap: 5px;
+    }
+    .logo img {
+        width:  20px;
+    }
+    
+    .logo span {
+        font-size: 20px;
+        color: var(--blue-500);
+    }
+    nav .nav--menu {
+        display: flex ;
+        align-items: center;
+        justify-content: space-around;
+        gap: 50px;
+    }
+    
+    .nav--itens {
+        list-style: none;
+        text-decoration: none;
+    }
+    .nav--itens a {
+        text-decoration: none;
+        color: var(--black-700);
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .nav--btn{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    
+    .btn--1 {
+        width: 60px;
+        height: 30px;
+        border: solid var(--blue-500) 1px;
+        border-radius: 20px;
+        background-color: #ffffff;
+        
+    }
+    .btn--1 a {
+        text-decoration: none;
+        color: blue;
+    }
+    .btn--2 {
+        width: 90px;
+        height: 30px;
+        border: none;
+        border-radius: 20px;
+        color: #fff;
+        background-color: var(--blue-500);
+        
+    }
+    .btn--2 a {
+        text-decoration: none;
+        color: #ffffff;
+    }
+}
+
+
+@layer main {
+    main {
+        padding-top: 7rem;
+    }
+}
+
+@layer footer {
+    
+}
