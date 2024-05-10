@@ -8,6 +8,7 @@
     <link rel="favicon icon" href="./assets/img/remessa.ico">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -21,20 +22,42 @@
             </div>
             <nav>
                 <ul class="nav--menu">
-                    <li class="nav--itens"><a href="##">Pessoa Física</a></li>
-                    <li class="nav--itens"><a href="##">Pessoa Jurídica</a></li>
-                    <li class="nav--itens"><a href="##">Cotações</a></li>
+                    <li class="nav--itens">
+                      <a class="nav--link" href="##">Pessoa Física</a>
+                    </li>
+                    <li class="nav--itens">
+                      <a class="nav--link" href="##">Pessoa Jurídica</a>
+                    </li>
+                    <li class="nav--itens">
+                      <a class="nav--link" href="##">Cotações</a>
+                    </li>
                 </ul>
             </nav>
             <div class="nav--btn">
-                <button class="btn--1"><a href="##">Entrar</a></button>
-                <button class="btn--2"><a href="##">Cadastrar</a></button>
+              <a href="##"> <button class="btn--1">Entrar</button></a>
+              <a href="##"> <button class="btn--2">Cadastrar</button></a>
             </div>
         </div>
     </header>
-    <main>
-        <h1>Remessa Coder</h1>
-        <h2>Conversor de Moedas</h2>
+    <section class="hero"><!-------------Sessão Hero canteúdo---------------->
+      <div class="hero__container">
+        <div class="top--info">
+          <p>A Remessa Online doará parte da receita obtida com as transferências, ao Rio Grande do Sul, para amenizar o sofrimento das vítimas das chuvas.</p>
+        </div>
+        <h3 class="hero__title">Transferência internacional,<br>
+            Conta e Cartão Global com<br>
+            o menor preço e envio rápido.
+        </h3>
+        <div class="hero__subtitle"> 
+          <i class="fa-brands fa-pix"></i><span>Pagamento via Pix</span><br>
+          <i class="fa-solid fa-euro-sign"></i><span> Envio de Euro e Libra em minutos</span><br>
+          <i class="fa-solid fa-headset"></i><span>Empresa brasileira com atendimento em português</span> 
+        </div>  
+      </div>
+  </section> <!------------Final hero conteúdo------------>
+  <section class="forms--content">
+
+  </section>
     </main>
     <footer>
         <div class="interface">
@@ -44,11 +67,7 @@
                 <span> Remessa Coder</span>
             </div>
             <div class="text--small">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
-                     Blanditiis, saepe fugiat quod assumenda sed adipisci aperiam ,<br>
-                     dolore, sint facere aspernatur id obcaecati reprehenderit. Blanditiis<br>
-                     velit omnis, eligendi quae expedita voluptate.
-                </p>
+                <p>Projeto Educacional desenvolvido para o trabalho final do curso JavaScript da Coder House. Turma 70555 | Este projeto não possui nenhum vínculo com a marca "Remessa online", esse projeto foi desenvolvido apenas para fins educacionais.
             </div>
           </div>
           <!--------- LOGO REMESSA CODER --------->
@@ -60,11 +79,11 @@
                 <li>Front-end Developer</li>
                 <li>
                   <a href="https://github.com/fernandesfabio" target="_blank">
-                    <i class="bi bi-github"></i>
+                    <i class="fa-brands fa-github"></i>
                   </a>
                   <a href="https://www.linkedin.com/in/fabio-fernandes-20b152166/"
                     target="_blank">
-                    <i class="bi bi-linkedin"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
                   </a>
                 </li>
               </ul>
@@ -77,10 +96,10 @@
                 <li>Front-end Developer</li>
                 <li>
                   <a href="https://github.com/FelipePFreitas" target="_blank">
-                    <i class="bi bi-github"></i>
+                    <i class="fa-brands fa-github"></i>
                   </a>
-                  <a href="##" target="_blank">
-                    <i class="bi bi-linkedin"></i>
+                  <a href="https://www.linkedin.com/in/felipe-pereira-de-freitas-39154716b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
                   </a>
                 </li>
               </ul>
@@ -88,8 +107,7 @@
           </div>
           <!----------  Informação dos codres Coders------------>
         </div>
-        <!---------Interface-------------->
-        <hr>
+          <hr>
         <div class="line--footer">
             <div class="text--center">
                 <span class="text--small">Correspondente cambial autorizado</span>
@@ -107,13 +125,13 @@
                   </div>
             
                   <div>
-                    <span class="text--small">
+                    <a href="mailto:remessa@remessacoder.com.br" class="text--mail">
                       remessa@remessacoder.com.br
-                    </span>
+                    </a>
                   </div>
                   <div class=>
                     <span class="text--small">
-                      Website created by Fabio Fernandes & Fabio Fernandes
+                      Website created by Fabio Fernandes & Felipe Freitas
                     </span>
                   </div>
             </div>

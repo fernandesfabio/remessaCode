@@ -13,7 +13,7 @@
         --gray-100: #fafafa;
         --gray-shadow: #07070783;
         --christi-400: #80d14a;
-        --christi-300: #a2e175;
+        --christi-300: #9debb5;
         --christi-500: #59a928;
         --black-700: #212121;
         --black-800: #0d0c0f;
@@ -40,13 +40,13 @@
         position: fixed;
         background-color: var(--white);
         box-shadow: 0px 2px 10px var(--gray-shadow);
-        margin-bottom: 2rem;
+      
     }
     .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1.5rem 8%;
+        padding: 1.1rem 8%;
         
     }
     .logo{
@@ -80,9 +80,25 @@
     }
     .nav--itens a {
         text-decoration: none;
-        color: var(--black-700);
+        color: var(--black-800);
         font-size: 14px;
-        font-weight: 400;
+        font-weight: 600;
+    }
+    .nav--link {
+      position: relative;
+    }
+    .nav--link::after{
+      content: " ";
+      width: 0;
+      height: 0.1rem;
+      background-color: var(--gray-400);
+      position: absolute;
+      top: 1rem;
+      left: 0;
+      border-radius: 3.1rem;
+    }
+    .nav--link:hover::after{
+      width: 100%;
     }
     .nav--btn{
         display: flex;
@@ -94,45 +110,95 @@
     .btn--1 {
         padding: .8rem;
         font-size: 1.1rem;
+        color: var(--blue-500);
         border: solid var(--blue-500) 1px;
         border-radius: 20px;
-        background-color: #ffffff;
-        
-        
+        background-color:var(--white);  
+    }
+    .btn--1:hover{
+      border-color: var(--black-800);
+      color: var(--black-800);
     }
     .btn--1 a {
         text-decoration: none;
-        color: var(--blue-500);
     }
-    .btn--1 a:hover {
-        color: black;
-    }
+ 
     .btn--2 {
         padding: .8rem;
         font-size: 1.1rem;
         border: none;
         border-radius: 20px;
-        color: #fff;
+        color: var(--white);
         background-color: var(--blue-500);
         
     }
     .btn--2 a {
         text-decoration: none;
-        color: #ffffff;
     }
     .btn--2:hover {
         background-color: var(--blue-800);
+        color: var(--white);
     }
 }
 
 
 @layer main {
-    main {
-      
-        padding: 7rem 8% 1.5rem;
-        height: 100vh;
+
+    .hero__container {
+      padding: 7rem 8%;     
     }
-}
+    
+    .hero {
+      background-image: url(/assets/img/heroRemessa.png) ;
+      min-height: 56rem;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    
+    }
+    .top--info{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      padding: 1.1rem;
+      font-family: var(--font-secondary);
+      font-size: 14px;
+      font-weight: 500;
+      background-color: var(--christi-300);
+      border: none;
+      border-radius: 1.1rem;
+    }
+    .hero__title {
+      display: flex;
+      justify-content: flex-start;
+      text-align: left;
+      color: var(--black-800);
+      font-family: var(--font-primary);
+      font-weight: 600;
+      font-size: 2rem;
+      padding-top: 7rem;   
+      padding-bottom: 3rem;   
+    }
+    .hero__subtitle {
+      color: var(--black-800);
+      font-size: 18px;
+      font-family: var(--font-secondary);
+      font-weight: 400;
+      line-height: 2.2rem;
+      margin-bottom: 2.4rem;
+      text-align: left;
+      margin-right: 50%;
+    }
+    .hero__subtitle i {
+      margin-right: 10px;
+      color: var(--blue-500);
+    }
+    .forms--content {
+      height: 100vh;
+    }
+  }
 
 @layer footer {
     footer > .interface{
@@ -180,8 +246,12 @@
       }
       .social i{
         padding: 0.4rem;
-        color: var(--white);
-        font-size: 1.2rem;    
+        color: var(--black-800);
+        font-size: 1rem;
+        background-color: var(--white);  
+        border: none;
+        border-radius: 50%; 
+        margin-right: 10px; 
       }
       .line--footer{ 
         background-color: var(--blue-500);
@@ -196,11 +266,16 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        padding-top: 1.5rem;
       }
       .text--center img {
         height: 56px;
       }
-      
+      .text--mail{
+        font-size: .8rem;
+        color: var(--white);
+        text-decoration: none;
+      }
       .text--small{
         font-size: .8rem;
         color: var(--white);
@@ -210,9 +285,13 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding-bottom: 1.5rem;
       }
       .copyright i {
         font-size: 14px;
       }
+
+}
+@layer mobile {
 
 }
