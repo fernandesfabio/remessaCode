@@ -52,7 +52,7 @@
     .logo{
         display: flex;
         align-items: center;
-        justify-content: first baseline;
+        justify-content: center;
         gap: 5px;
     }
     .logo a {
@@ -60,14 +60,14 @@
         cursor: pointer;
     }
     .logo img {
-        width:  20px;
+        width: 20px;
     }
     
     .logo span {
         font-size: 20px;
         color: var(--blue-500);
     }
-    nav .nav--menu {
+    .menu--desktop ul{
         display: flex ;
         align-items: center;
         justify-content: space-around;
@@ -101,43 +101,35 @@
       width: 100%;
     }
     .nav--btn{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
     }
-    
-    .btn--1 {
-        padding: .8rem;
-        font-size: 1.1rem;
-        color: var(--blue-500);
-        border: solid var(--blue-500) 1px;
-        border-radius: 20px;
-        background-color:var(--white);  
+    .btn--1 button {
+      padding: .8rem;
+      font-size: 1.1rem;
+      color: var(--blue-500);
+      border: solid var(--blue-500) 1px;
+      border-radius: 20px;
+      background-color:var(--white);  
     }
-    .btn--1:hover{
+    .btn--1 button:hover{
       border-color: var(--black-800);
       color: var(--black-800);
     }
-    .btn--1 a {
-        text-decoration: none;
-    }
- 
-    .btn--2 {
-        padding: .8rem;
-        font-size: 1.1rem;
-        border: none;
-        border-radius: 20px;
-        color: var(--white);
-        background-color: var(--blue-500);
+    .btn--2 button {
+      padding: .8rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 20px;
+      color: var(--white);
+      background-color: var(--blue-500);
         
     }
-    .btn--2 a {
-        text-decoration: none;
-    }
-    .btn--2:hover {
-        background-color: var(--blue-800);
-        color: var(--white);
+    .btn--2 button:hover {
+      background-color: var(--blue-800);
+      color: var(--white);
     }
 }
 
@@ -183,7 +175,7 @@
     }
     .hero__subtitle {
       color: var(--black-800);
-      font-size: 18px;
+      font-size: 16px;
       font-family: var(--font-secondary);
       font-weight: 400;
       line-height: 2.2rem;
@@ -213,10 +205,15 @@
         display: flex;
         align-items: center;
         text-align: center;
+        justify-content: left;
         color: var(--white);
       }
       .logo--footer img{
-        height: 36px; 
+        height: 2.5rem; 
+        margin-left: -15px;
+      }
+      .logo--footer span {
+        margin-left: -10px
       }
       .coders{       
         width: 100%;
@@ -269,7 +266,7 @@
         padding-top: 1.5rem;
       }
       .text--center img {
-        height: 56px;
+        height: 3.5rem;
       }
       .text--mail{
         font-size: .8rem;
@@ -292,6 +289,134 @@
       }
 
 }
-@layer mobile {
 
+@layer responsive {
+  @media only screen and (max-width: 1650px ){
+    /* --------------------- HEADER --------------------- */
+    .hero__subtitle {
+      font-size: 14px;
+     }
+    /* -------------------------------------------------- */
+   
+  }
+  @media only screen and (max-width: 1377px ){
+    /* --------------------- HEADER --------------------- */
+    .hero__title {
+      font-size: 1.5rem;
+    }
+    .hero__subtitle {
+      font-size: 12px;
+    }
+    /* -------------------------------------------------- */   
+  }
+  @media only screen and (max-width: 1266px) {
+    /* --------------------- HEADER --------------------- */
+    .top--info {
+      font-size: 10px;
+    }
+    .hero__title {
+      font-size: 1.2rem;
+    }
+    .hero__subtitle {
+      font-size: 8px;
+      line-height: 1.5rem;
+    }
+    /* -------------------------------------------------- */
+
+    /* --------------------- MAIN --------------------- */
+
+    /* ------------------------------------------------ */
+    
+    /* --------------------- FOOTER --------------------- */
+    .social{
+      line-height: 1.5rem;
+    }
+    .social li{
+      font-size: .8rem;       
+    }
+    .social span{
+      font-size: .8rem;
+    }
+    .social i{
+      font-size: .8rem;
+      margin-top: 10px;
+    }
+    .text--small{
+      font-size: .6rem;
+      line-height: 1.5rem;
+    }
+    .copyright i {
+      font-size: 12px;
+    }
+    /* -------------------------------------------------- */
+   }
+  @media only screen and (max-width: 1024px) {
+
+    /* --------------------- HEADER --------------------- */
+    .menu--desktop {
+      display: none;
+    }
+    .nav--btn .btn--1 {
+      display: none;
+    }
+    .btn--2 button {
+      padding: .8rem;
+      font-size: 1.1rem;
+      color: var(--blue-500);
+      border: solid var(--blue-500) 1px;
+      border-radius: 20px;
+      background-color:var(--white);  
+    }
+    .btn--2 button:hover{
+      border-color: var(--black-800);
+      color: var(--black-800);
+    }
+     /* -------------------------------------------------- */
+
+
+    /* --------------------- MAIN --------------------- */
+
+    /* ------------------------------------------------ */
+    
+
+    /* --------------------- FOOTER --------------------- */
+    .social{
+      line-height: 1.2rem;
+    }
+    .social li{
+      font-size: .6rem;       
+    }
+    .social span{
+      font-size: .6rem;
+    }
+    .social i{
+      font-size: .6rem;
+      margin-top: 10px;
+    }
+    .text--small{
+      font-size: .5rem;
+      line-height: 1.2rem;
+    }
+    .text--mail{
+      font-size: .5rem;
+    }
+    .copyright i {
+      font-size: .5rem;
+    }
+    /* -------------------------------------------------- */
+ }
+  
+  
+  @media only screen and (max-width: 835px ) {
+    .top--info {
+      font-size: 8px;
+    }
+    .hero__title {
+      font-size: 1rem;
+    }
+    .hero__subtitle {
+      font-size: 7px;
+      line-height: 1rem;
+    }
+  }
 }
