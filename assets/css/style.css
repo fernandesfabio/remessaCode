@@ -149,7 +149,7 @@
     }
     
     .hero {
-      background-image: url(/assets/img/heroRemessa.png) ;
+      background-image: url(../img/heroRemessa.png) ;
       min-height: 56rem;
       width: 100%;
       background-repeat: no-repeat;
