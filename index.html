@@ -4,44 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remessa Coder - Conversor de Moedas</title>
-    <script defer src="##"></script>
+    <script defer src="./assets/js/mobile.js"></script>
     <link rel="favicon icon" href="./assets/img/remessa.ico">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="./index.html">
-                    <img src="./assets/img/logo.png" alt="Logo">
-                    <span> Remessa Coder</span>
-                </a>
+  <header>
+      <div class="container">
+          <div class="logo">
+              <a href="./index.html">
+                  <img src="./assets/img/logo.png" alt="Logo">
+                  <span> Remessa Coder</span>
+              </a>
+          </div>
+          <nav class="menu--desktop">
+              <ul>
+                  <li class="nav--itens">
+                    <a class="nav--link" href="##">Pessoa Física</a>
+                  </li>
+                  <li class="nav--itens">
+                    <a class="nav--link" href="##">Pessoa Jurídica</a>
+                  </li>
+                  <li class="nav--itens">
+                    <a class="nav--link" href=".forms--content">Cotações</a>
+                  </li>
+              </ul>
+          </nav>
+          <div class="nav--btn">
+            <a class="btn--1" href="##"> <button>Entrar</button></a>
+            <a class="btn--2" href="##"> <button>Cadastrar</button></a>
+            <div class="btn--open">
+             <button onclick="menuShow()"><img class="icon" src="./assets/img/menu.svg" alt="botão d eabrir menu"></button> 
             </div>
-            <nav class="menu--desktop">
-                <ul>
-                    <li class="nav--itens">
-                      <a class="nav--link" href="##">Pessoa Física</a>
-                    </li>
-                    <li class="nav--itens">
-                      <a class="nav--link" href="##">Pessoa Jurídica</a>
-                    </li>
-                    <li class="nav--itens">
-                      <a class="nav--link" href="##">Cotações</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="nav--btn">
-              <a class="btn--1" href="##"> <button>Entrar</button></a>
-              <a class="btn--2" href="##"> <button>Cadastrar</button></a>
-            </div>
-        </div>
-    </header>
+          </div>
+      </div>
+      <nav class="menu--mobile">
+        <ul>
+            <li class="nav--itens">
+              <a class="nav--link" href="##">Pessoa Física</a>
+            </li>
+            <li class="nav--itens">
+              <a class="nav--link" href="##">Pessoa Jurídica</a>
+            </li>
+            <li class="nav--itens">
+              <a class="nav--link" href=".forms--content">Cotações</a>
+            </li>
+            <a class="btn--link" href="##">Cadastre-se aqui</a>
+            <a class="btn--1" href="##"> <button>Entrar</button></a>
+        </ul>          
+    </nav>
+  </header>
+
+  <main>
     <section class="hero"><!-------------Sessão Hero canteúdo---------------->
       <div class="hero__container">
         <div class="top--info">
-          <p>A Remessa Online doará parte da receita obtida com as transferências, ao Rio Grande do Sul, para amenizar o sofrimento das vítimas das chuvas.</p>
+          <p>A Remessa Coder doará parte da receita obtida com as transferências, ao Rio Grande do Sul, para amenizar o sofrimento das vítimas das chuvas.</p>
         </div>
         <h3 class="hero__title">Transferência internacional,<br>
             Conta e Cartão Global com<br>
@@ -53,90 +73,88 @@
           <i class="fa-solid fa-headset"></i><span>Empresa brasileira com atendimento em português</span> 
         </div>  
       </div>
-  </section> <!------------Final hero conteúdo------------>
-  <section class="forms--content">
+    </section> <!------------Final hero conteúdo------------>
+  </main>
 
-  </section>
-    </main>
-    <footer>
-        <div class="interface">
-          <div>
-            <div class="logo--footer">
-                <img src="./assets/img/remessaWhite.png" alt="logo Remessa Coder" />
-                <span> Remessa Coder</span>
-            </div>
-            <div class="text--small">
-                <p>Projeto Educacional desenvolvido para o trabalho final do curso JavaScript da Coder House. Turma 70555 | Este projeto não possui nenhum vínculo com a marca "Remessa online", esse projeto foi desenvolvido apenas para fins educacionais.
-            </div>
+  <footer>
+    <div class="interface">
+      <div>
+        <div class="logo--footer">
+            <img src="./assets/img/remessaWhite.png" alt="logo Remessa Coder" />
+            <span> Remessa Coder</span>
+        </div>
+        <div class="text--small">
+            <p>Projeto Educacional desenvolvido para o trabalho final do curso JavaScript da Coder House. Turma 70555 | Este projeto não possui nenhum vínculo com a marca "Remessa online", esse projeto foi desenvolvido apenas para fins educacionais.
+        </div>
+      </div>
+      <!--------- LOGO REMESSA CODER --------->
+
+      <div class="coders">
+        <div>
+          <ul class="social">
+            <li><span><strong>Fabio</strong> Fernandes</span></li>
+            <li>Front-end Developer</li>
+            <li>
+              <a href="https://github.com/fernandesfabio" target="_blank">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/fabio-fernandes-20b152166/"
+                target="_blank">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul class="social">
+            <li>
+              <span><strong>Felipe</strong> Freitas</span>
+            </li>
+            <li>Front-end Developer</li>
+            <li>
+              <a href="https://github.com/FelipePFreitas" target="_blank">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/felipe-pereira-de-freitas-39154716b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!----------  Informação dos codres Coders------------>
+    </div>
+      <hr>
+    <div class="line--footer">
+        <div class="text--center">
+            <span class="text--small">Correspondente cambial autorizado</span>
+        </div>
+        <div class="text--center">
+            <img src="./assets/img/remessaWhite.png" alt="Logo remessa coder">
+              Remessa Coder 
+            </span>
+        </div><br><br><br>
+        <div class="last--text">
+          <div class="copyright">
+            <span class="text--small">Copyright</span>
+            <i class="fa-brands fa-creative-commons"></i>
+            <span class="text--small">2024, Remessa Coder. Todos os direitos reservados</span>
           </div>
-          <!--------- LOGO REMESSA CODER --------->
     
-          <div class="coders">
-            <div>
-              <ul class="social">
-                <li><span><strong>Fabio</strong> Fernandes</span></li>
-                <li>Front-end Developer</li>
-                <li>
-                  <a href="https://github.com/fernandesfabio" target="_blank">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                  <a href="https://www.linkedin.com/in/fabio-fernandes-20b152166/"
-                    target="_blank">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <ul class="social">
-                <li>
-                  <span><strong>Felipe</strong> Freitas</span>
-                </li>
-                <li>Front-end Developer</li>
-                <li>
-                  <a href="https://github.com/FelipePFreitas" target="_blank">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                  <a href="https://www.linkedin.com/in/felipe-pereira-de-freitas-39154716b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
+          <div>
+            <a href="mailto:remessa@remessacoder.com.br" class="text--mail">
+              remessa@remessacoder.com.br
+            </a>
           </div>
-          <!----------  Informação dos codres Coders------------>
+          <div>
+            <span class="text--small">
+              Website created by Fabio Fernandes & Felipe Freitas
+            </span>
+          </div>
         </div>
-          <hr>
-        <div class="line--footer">
-            <div class="text--center">
-                <span class="text--small">Correspondente cambial autorizado</span>
-            </div>
-            <div class="text--center">
-                <img src="./assets/img/remessaWhite.png" alt="Logo remessa coder">
-                 Remessa Coder 
-                </span>
-            </div><br><br><br>
-            <div class="last--text">
-                <div class="copyright">
-                    <span class="text--small">Copyright</span>
-                    <i class="fa-brands fa-creative-commons"></i>
-                    <span class="text--small">2024, Remessa Coder. Todos os direitos reservados</span>
-                  </div>
-            
-                  <div>
-                    <a href="mailto:remessa@remessacoder.com.br" class="text--mail">
-                      remessa@remessacoder.com.br
-                    </a>
-                  </div>
-                  <div class=>
-                    <span class="text--small">
-                      Website created by Fabio Fernandes & Felipe Freitas
-                    </span>
-                  </div>
-            </div>
-        </div>
-        <!--------- última linha do footer  ---------->
-      </footer>
+    </div>
+    <!--------- última linha do footer  ---------->
+  </footer>
     
 </body>
 </html>
