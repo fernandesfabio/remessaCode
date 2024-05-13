@@ -113,7 +113,7 @@
       border: solid var(--blue-500) 1px;
       border-radius: 20px;
       background-color:var(--white); 
-      cursor: pointer; 
+      cursor: pointer;  
     }
     .btn--1 button:hover{
       border-color: var(--black-800);
@@ -127,7 +127,6 @@
       color: var(--white);
       background-color: var(--blue-500);
       cursor: pointer;
-        
     }
     .btn--2 button:hover {
       background-color: var(--blue-800);
@@ -146,6 +145,7 @@
     .menu--mobile {
       display: none;
       height: 100vh;
+      z-index: 9998;
     }
 }
 
@@ -203,6 +203,27 @@
       margin-right: 10px;
       color: var(--blue-500);
     }
+
+    /* SECTION CARDS */
+
+    .cards {
+      height: 50vh;
+      background-color: var(--white);
+    }
+
+    /* SECTION CONVERSOR */
+
+    .conversor--container {
+      height: 100vh;
+      background-color: var(--blue-500);
+    }
+
+    /* SECTION INFOS */
+
+  .last--info {
+    height: 50vh;
+    background-color: var(--white);
+  }
   }
 
 @layer footer {
@@ -382,11 +403,9 @@
       display: none;
     }
     .btn--2 button {
-      font-size: 1.1rem;
       color: var(--blue-500);
       border: solid var(--blue-500) 1px;
-      border-radius: 20px;
-      background-color:var(--white);  
+      background-color:var(--white);
     }
     .btn--2 button:hover{
       border-color: var(--black-800);
@@ -429,6 +448,14 @@
     }
     .hide{
       display: none;
+    }
+    .btn--scroll button{
+      color: var(--white);
+      background-color: var(--blue-500);
+    }
+    .btn--scroll button:hover {
+      background-color: var(--blue-800);
+      color: var(--white);
     }
     /* -------------------------------------------------- */
 

@@ -7,10 +7,12 @@ function menuShow() {
         menuMobile.classList.add('open')
         document.querySelector('.icon').src = "./assets/img/close.svg"
     }
-    let hideButton = document.querySelector('.btn--2');
-    if (hideButton.classList.contains('hide')) {
-        hideButton.classList.remove('hide');
-    }else {
-        hideButton.classList.add('hide');
-    }
+    let hideButton = document.querySelector('#btn--2');
+    hideButton.classList.toggle('hide');
 }
+
+window.addEventListener("scroll", function() {
+    let btnScroll = document.querySelector('#btn--2');
+    btnScroll.classList.toggle('btn--scroll', window.scrollY > 0);
+    }
+)
