@@ -1,116 +1,59 @@
-// Módulo para manipulação de moeda
-class ConversorMoeda {
-    constructor(taxas) {
-        this.taxas = taxas;
-    }
-
-    converter(valor, moedaDestino) {
-        const taxa = this.taxas[moedaDestino];
-        if (!taxa) {
-            console.log("Moeda de destino inválida.");
-            return 0;
-        }
-        return valor * taxa;
-    }
-
-    aplicarIOF(valor) {
-        const descontoIOF = valor * 0.011; // 1.1% de IOF
-        return valor - descontoIOF;
-    }
-}
-
-// Módulo para interface do usuário
-class InterfaceUsuario {
-    static exibirOpcoes() {
-        console.log("Opções de Conversão:");
-        console.log("1. BRL para USD (Dólares Americanos)");
-        console.log("2. BRL para EUR (Euros)");
-        console.log("3. BRL para GBP (Libra Esterlina)");
-        console.log("4. BRL para CNY (Yuan Chinês)");
-        console.log("5. Sair");
-    }
-
-    static receberEscolha() {
-        return prompt("Escolha uma opção (1, 2, 3, 4 ou 5):");
-    }
-
-    static receberValorReais() {
-        return parseFloat(prompt("Insira o valor em Reais (BRL):"));
-    }
-
-    static exibirResultadoSemIOF(valor, moeda) {
-        console.log(`O valor em ${moeda} sem IOF é: ${valor.toFixed(2)}`);
-    }
-
-    static exibirResultadoComIOF(valor, moeda) {
-        console.log(`O valor em ${moeda} com IOF é: ${valor.toFixed(2)}`);
-    }
-}
-
-// Módulo de controle principal
-class ConversorController {
+class CurrencyConverter {
     constructor() {
-        this.taxasMoeda = {
-            dolar: 0.20,
-            euro: 0.18,
-            libra: 0.16,
-            yuan: 1.42
-        };
-        this.conversor = new ConversorMoeda(this.taxasMoeda);
-    }
-
-    iniciarConversao() {
-        let continuar = true;
-        while (continuar) {
-            InterfaceUsuario.exibirOpcoes();
-            const escolha = InterfaceUsuario.receberEscolha();
-            switch (escolha) {
-                case '1':
-                case '2':
-                case '3':
-                case '4':
-                    this.realizarConversao(escolha);
-                    break;
-                case '5':
-                    console.log("Saindo do programa...");
-                    continuar = false;
-                    break;
-                default:
-                    console.log("Opção inválida. Tente novamente.");
+        this.exchangeRates = {
+            "BRL": {
+                "USD": 0.19, // 1 BRL = 0.19 USD
+                "EUR": 0.16, // 1 BRL = 0.16 EUR
+                "GBP": 0.14, // 1 BRL = 0.14 GBP
+                "CNY": 1.21   // 1 BRL = 1.21 CNY
+            },
+            "USD": {
+                "BRL": 5.34, // 1 USD = 5.34 BRL
+                "EUR": 0.82, // 1 USD = 0.82 EUR
+                "GBP": 0.73, // 1 USD = 0.73 GBP
+                "CNY": 6.53   // 1 USD = 6.53 CNY
+            },
+            "EUR": {
+                "USD": 1.22, // 1 EUR = 1.22 USD
+                "BRL": 6.17, // 1 EUR = 6.17 BRL
+                "GBP": 0.89, // 1 EUR = 0.89 GBP
+                "CNY": 7.34   // 1 EUR = 7.34 CNY
+            },
+            "GBP": {
+                "USD": 1.37, // 1 GBP = 1.37 USD
+                "EUR": 1.12, // 1 GBP = 1.12 EUR
+                "CNY": 8.19, // 1 GBP = 8.19 CNY
+                "BRL": 7.20  // 1 GBP = 7.20 BRL
+            },
+            "CNY": {
+                "USD": 0.15, // 1 CNY = 0.15 USD
+                "EUR": 0.14, // 1 CNY = 0.14 EUR
+                "GBP": 0.12, // 1 CNY = 0.12 GBP
+                "BRL": 0.82  // 1 CNY = 0.82 BRL
             }
-        }
+        };
     }
 
-    realizarConversao(escolha) {
-        const valorReais = InterfaceUsuario.receberValorReais();
-        if (isNaN(valorReais)) {
-            console.log("Valor em Reais inválido.");
-            return;
-        }
-
-        let moedaDestino;
-        switch (escolha) {
-            case '1':
-                moedaDestino = 'dolar';
-                break;
-            case '2':
-                moedaDestino = 'euro';
-                break;
-            case '3':
-                moedaDestino = 'libra';
-                break;
-            case '4':
-                moedaDestino = 'yuan';
-                break;
-        }
-
-        const valorMoeda = this.conversor.converter(valorReais, moedaDestino);
-        InterfaceUsuario.exibirResultadoSemIOF(valorMoeda, moedaDestino.toUpperCase());
-        const valorMoedaComIOF = this.conversor.aplicarIOF(valorMoeda);
-        InterfaceUsuario.exibirResultadoComIOF(valorMoedaComIOF, moedaDestino.toUpperCase());
+    convert(amount, fromCurrency, toCurrency) {
+        var exchangeRate = this.exchangeRates[fromCurrency][toCurrency];
+        var resultAmount = amount * exchangeRate;
+        return resultAmount;
     }
 }
 
-// Instanciando e iniciando o controlador
-const conversorController = new ConversorController();
-conversorController.iniciarConversao();
+// Função para realizar a conversão de moeda
+function convert() {
+    var amount = parseFloat(document.getElementById("amount").value);
+    var fromCurrency = document.getElementById("from").value;
+    var toCurrency = document.getElementById("to").value;
+    var result = document.getElementById("result");
+  
+    // Instanciar a classe CurrencyConverter
+    var converter = new CurrencyConverter();
+  
+    // Realizar a conversão utilizando o método convert da classe CurrencyConverter
+    var convertedAmount = converter.convert(amount, fromCurrency, toCurrency);
+  
+    // Exibir o resultado no HTML
+    result.innerHTML = `A quantia de ${amount.toFixed(2)} ${fromCurrency} é equivalente a ${convertedAmount.toFixed(2)} ${toCurrency} no câmbio atual`;
+}

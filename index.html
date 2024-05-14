@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remessa Coder - Conversor de Moedas</title>
     <script defer src="./assets/js/mobile.js"></script>
+    <script defer src="./assets/js/conversao.js"></script>
     <link rel="favicon icon" href="./assets/img/remessa.ico">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -78,6 +79,48 @@
 
     </section>
     <section class="conversor--container" id="conversor">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de Moedas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="converter">
+    <h2>Conversor de Moedas</h2>
+    <div>
+        <div id="result"></div>
+      <label for="amount">Valor:</label>
+      <input type="number" id="amount">
+    </div>
+    <div>
+      <label for="from">De:</label>
+      <select id="from">
+        <option value="BRL">Real (BRL)</option>
+        <option value="USD">Dólar (USD)</option>
+        <option value="EUR">Euro (EUR)</option>
+        <option value="GBP">Libra (GBP)</option>
+        <option value="CNY">Yuan (CNY)</option>
+      </select>
+    </div>
+    <div>
+      <label for="to">Para:</label>
+      <select id="to">
+        <option value="BRL">Real (BRL)</option>
+        <option value="USD">Dólar (USD)</option>
+        <option value="EUR">Euro (EUR)</option>
+        <option value="GBP">Libra (GBP)</option>
+        <option value="CNY">Yuan (CNY)</option>
+      </select>
+    </div>
+    <button onclick="convert()">Converter</button>
+   
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
 
     </section>
     <section class="last--info">
