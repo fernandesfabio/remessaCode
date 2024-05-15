@@ -78,47 +78,52 @@
     <section class="cards" id="cards">
 
     </section>
-    <section class="conversor--container" id="conversor">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conversor de Moedas</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="converter">
-    <h2>Conversor de Moedas</h2>
-    <div>
-        <div id="result"></div>
-      <label for="amount">Valor:</label>
-      <input type="number" id="amount">
-    </div>
-    <div>
-      <label for="from">De:</label>
-      <select id="from">
-        <option value="BRL">Real (BRL)</option>
-        <option value="USD">Dólar (USD)</option>
-        <option value="EUR">Euro (EUR)</option>
-        <option value="GBP">Libra (GBP)</option>
-        <option value="CNY">Yuan (CNY)</option>
-      </select>
-    </div>
-    <div>
-      <label for="to">Para:</label>
-      <select id="to">
-        <option value="BRL">Real (BRL)</option>
-        <option value="USD">Dólar (USD)</option>
-        <option value="EUR">Euro (EUR)</option>
-        <option value="GBP">Libra (GBP)</option>
-        <option value="CNY">Yuan (CNY)</option>
-      </select>
-    </div>
-    <button onclick="convert()">Converter</button>
-   
-  </div>
-  <script src="script.js"></script>
+    <section class="conversor--container" id="conversor"> 
+      <div class="result" id="result"></div>       
+      <div class="wrapper">
+        <div class="logo--convert">
+          <img src="./assets/img/remessa.ico" alt="Logo remessa coder">
+            <span>
+              Remessa Coder 
+            </span>
+        </div>
+        <div class="form">
+          <div class="amount">
+            <p>Valor a converter</p>
+            <input type="text" id="amount" value="1">
+          </div>
+          <div class="drop-list">
+            <div class="from">
+              <p>De</p>
+              <div class="select-box">
+                <select id="from">
+                  <option value="BRL">BRL</option>
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="GBP">GBP</option>
+                  <option value="CNY">CNY</option>
+                </select>
+              </div>
+            </div>
+            <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+            <div class="to">
+              <p>Para</p>
+              <div class="select-box">
+                <select id="to">
+                  <option value="BRL">BRL</option>
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="GBP">GBP</option>
+                  <option value="CNY">CNY</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="exchange-rate">Obtendo taxa de cambio...</div>
+          <button onclick="convert()">Obter cotação</button>
+        </div>
+      </div>
+  
 </body>
 </html>
 
@@ -181,6 +186,7 @@
         </div>
         <div class="text--center">
             <img src="./assets/img/remessaWhite.png" alt="Logo remessa coder">
+            <span>
               Remessa Coder 
             </span>
         </div><br><br><br>

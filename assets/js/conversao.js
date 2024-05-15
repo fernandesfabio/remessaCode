@@ -35,25 +35,27 @@ class CurrencyConverter {
     }
 
     convert(amount, fromCurrency, toCurrency) {
-        var exchangeRate = this.exchangeRates[fromCurrency][toCurrency];
-        var resultAmount = amount * exchangeRate;
+        let exchangeRate = this.exchangeRates[fromCurrency][toCurrency];
+        let resultAmount = amount * exchangeRate;
         return resultAmount;
     }
 }
 
 // Função para realizar a conversão de moeda
 function convert() {
-    var amount = parseFloat(document.getElementById("amount").value);
-    var fromCurrency = document.getElementById("from").value;
-    var toCurrency = document.getElementById("to").value;
-    var result = document.getElementById("result");
+    let amount = parseFloat(document.getElementById("amount").value);
+    let fromCurrency = document.getElementById("from").value;
+    let toCurrency = document.getElementById("to").value;
+    let result = document.getElementById("result");
   
     // Instanciar a classe CurrencyConverter
-    var converter = new CurrencyConverter();
+    let converter = new CurrencyConverter();
   
     // Realizar a conversão utilizando o método convert da classe CurrencyConverter
-    var convertedAmount = converter.convert(amount, fromCurrency, toCurrency);
+     convertedAmount = converter.convert(amount, fromCurrency, toCurrency);
   
     // Exibir o resultado no HTML
-    result.innerHTML = `A quantia de ${amount.toFixed(2)} ${fromCurrency} é equivalente a ${convertedAmount.toFixed(2)} ${toCurrency} no câmbio atual`;
+    result.innerHTML = `<span class="text--resultL">${convertedAmount.toFixed(2)} ${toCurrency}</span><br>
+    <span class="text--resultS">Valor equivalente a  ${amount.toFixed(2)} ${fromCurrency} no câmbio atual</span>`;
+
 }
