@@ -11,6 +11,7 @@
         --white: #fff;
         --gray-400: #9ca4ab;
         --gray-100: #fafafa;
+        --yellow-200: #fcfdc7;
         --gray-shadow: #07070783;
         --christi-400: #80d14a;
         --christi-300: #9debb5;
@@ -155,7 +156,6 @@
     .hero__container {
       padding: 7rem 8%;     
     }
-    
     .hero {
       background-image: url(../img/heroRemessa.png) ;
       min-height: 56rem;
@@ -218,7 +218,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      height: 100vh;
+      height: 150vh;
       background-color: var(--blue-500);
     }
     .wrapper{
@@ -318,6 +318,8 @@
       transition: 0.3s ease;
       border: solid var(--blue-500) 1px;
       border-radius: 35px;
+      margin-bottom: 10px;
+      margin-top: 10px;
     }
     .form button:hover{
       background: var(--blue-500);
@@ -331,6 +333,34 @@
       font-size: 24px;
       line-height: 1.1rem;
       white-space: pre-line;
+    }
+    .extrato {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: content-box;
+      padding: 1.5rem;
+
+    }
+    .resultados ul{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      height: 150px;
+      gap: 20px;
+      padding: 1.5rem;
+      border-radius: 20px;
+      background-color: var(--yellow-200);
+      box-sizing: content-box;
+      overflow: hidden;
+      overflow-y: scroll;   
+    }
+    .resultados li{
+      list-style: none;
+      color: var(--black-700);
+      font-size: small;
+      margin-bottom: 10px;
     }
     .text--resultL {
       font-size: 2.5rem;

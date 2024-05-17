@@ -2,60 +2,110 @@ class CurrencyConverter {
     constructor() {
         this.exchangeRates = {
             "BRL": {
-                "USD": 0.19, // 1 BRL = 0.19 USD
-                "EUR": 0.16, // 1 BRL = 0.16 EUR
-                "GBP": 0.14, // 1 BRL = 0.14 GBP
-                "CNY": 1.21   // 1 BRL = 1.21 CNY
+                "USD": 0.19,
+                "EUR": 0.16,
+                "GBP": 0.14,
+                "CNY": 1.21
             },
             "USD": {
-                "BRL": 5.34, // 1 USD = 5.34 BRL
-                "EUR": 0.82, // 1 USD = 0.82 EUR
-                "GBP": 0.73, // 1 USD = 0.73 GBP
-                "CNY": 6.53   // 1 USD = 6.53 CNY
+                "BRL": 5.34,
+                "EUR": 0.82,
+                "GBP": 0.73,
+                "CNY": 6.53
             },
             "EUR": {
-                "USD": 1.22, // 1 EUR = 1.22 USD
-                "BRL": 6.17, // 1 EUR = 6.17 BRL
-                "GBP": 0.89, // 1 EUR = 0.89 GBP
-                "CNY": 7.34   // 1 EUR = 7.34 CNY
+                "USD": 1.22,
+                "BRL": 6.17,
+                "GBP": 0.89,
+                "CNY": 7.34
             },
             "GBP": {
-                "USD": 1.37, // 1 GBP = 1.37 USD
-                "EUR": 1.12, // 1 GBP = 1.12 EUR
-                "CNY": 8.19, // 1 GBP = 8.19 CNY
-                "BRL": 7.20  // 1 GBP = 7.20 BRL
+                "USD": 1.37,
+                "EUR": 1.12,
+                "CNY": 8.19,
+                "BRL": 7.20
             },
             "CNY": {
-                "USD": 0.15, // 1 CNY = 0.15 USD
-                "EUR": 0.14, // 1 CNY = 0.14 EUR
-                "GBP": 0.12, // 1 CNY = 0.12 GBP
-                "BRL": 0.82  // 1 CNY = 0.82 BRL
+                "USD": 0.15,
+                "EUR": 0.14,
+                "GBP": 0.12,
+                "BRL": 0.82
             }
         };
     }
 
     convert(amount, fromCurrency, toCurrency) {
+        if (!this.exchangeRates[fromCurrency] || !this.exchangeRates[fromCurrency][toCurrency]) {
+            console.error('Moedas selecionadas inválidas.');
+            return null;
+        }
+        
         let exchangeRate = this.exchangeRates[fromCurrency][toCurrency];
         let resultAmount = amount * exchangeRate;
         return resultAmount;
     }
 }
 
-// Função para realizar a conversão de moeda
 function convert() {
     let amount = parseFloat(document.getElementById("amount").value);
     let fromCurrency = document.getElementById("from").value;
     let toCurrency = document.getElementById("to").value;
     let result = document.getElementById("result");
-  
-    // Instanciar a classe CurrencyConverter
-    let converter = new CurrencyConverter();
-  
-    // Realizar a conversão utilizando o método convert da classe CurrencyConverter
-     convertedAmount = converter.convert(amount, fromCurrency, toCurrency);
-  
-    // Exibir o resultado no HTML
-    result.innerHTML = `<span class="text--resultL">${convertedAmount.toFixed(2)} ${toCurrency}</span><br>
-    <span class="text--resultS">Valor equivalente a  ${amount.toFixed(2)} ${fromCurrency} no câmbio atual</span>`;
 
+    let converter = new CurrencyConverter();
+    let convertedAmount = converter.convert(amount, fromCurrency, toCurrency);
+
+    if (convertedAmount !== null) {
+        let conversionRecord = {
+            amount: amount,
+            fromCurrency: fromCurrency,
+            toCurrency: toCurrency,
+            resultAmount: convertedAmount,
+            timestamp: new Date().toLocaleString()
+        };
+
+        let conversionHistory = JSON.parse(localStorage.getItem('conversionHistory')) || [];
+        conversionHistory.push(conversionRecord);
+        localStorage.setItem('conversionHistory', JSON.stringify(conversionHistory));
+
+        result.innerHTML = `<span class="text--resultL">${convertedAmount.toFixed(2)} ${toCurrency}</span><br>
+        <span class="text--resultS">Valor equivalente a  ${amount.toFixed(2)} ${fromCurrency} no câmbio atual</span>`;
+
+        updateTransactionHistory();
+    } else {
+        result.innerHTML = `<span class="text--resultL">Erro: valor inválido</span>`;
+    }
 }
+
+function updateTransactionHistory() {
+    let conversionHistory = JSON.parse(localStorage.getItem('conversionHistory')) || [];
+    let historyElement = document.getElementById('transactionHistory');
+    historyElement.innerHTML = '';
+
+    conversionHistory.forEach(record => {
+        let listItem = document.createElement('li');
+        listItem.innerHTML = `
+            ------------------------------------------------<br>
+            <span>Valor convertido: ${record.amount.toFixed(2)} ${record.fromCurrency} = ${record.resultAmount.toFixed(2)} ${record.toCurrency}</span><br>
+            <span>Data e hora: ${record.timestamp}</span><br>
+        `;
+        historyElement.appendChild(listItem);
+    });
+}
+
+function toggleTransactionHistory() {
+    let historyElement = document.getElementById('transactionHistory');
+    if (historyElement.style.display === 'none') {
+        historyElement.style.display = 'block';
+    } else {
+        historyElement.style.display = 'none';
+    }
+}
+function clearTransactionHistory() {
+    localStorage.removeItem('conversionHistory');
+    updateTransactionHistory(); // Atualiza o extrato após limpar
+}
+
+
+
+document.addEventListener('DOMContentLoaded', updateTransactionHistory);

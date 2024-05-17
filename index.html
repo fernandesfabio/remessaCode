@@ -79,57 +79,64 @@
 
     </section>
     <section class="conversor--container" id="conversor"> 
-      <div class="result" id="result"></div>       
+      
+        <div class="result" id="result">
+
+        </div> 
       <div class="wrapper">
         <div class="logo--convert">
           <img src="./assets/img/remessa.ico" alt="Logo remessa coder">
             <span>
               Remessa Coder 
             </span>
-        </div>
-        <div class="form">
-          <div class="amount">
-            <p>Valor a converter</p>
-            <input type="text" id="amount" value="1">
-          </div>
-          <div class="drop-list">
-            <div class="from">
-              <p>De</p>
-              <div class="select-box">
-                <select id="from">
-                  <option value="BRL">BRL</option>
-                  <option value="USD">USD</option>
-                  <option value="EUR">EUR</option>
-                  <option value="GBP">GBP</option>
-                  <option value="CNY">CNY</option>
-                </select>
-              </div>
-            </div>
-            <div class="icon"><i class="fas fa-exchange-alt"></i></div>
-            <div class="to">
-              <p>Para</p>
-              <div class="select-box">
-                <select id="to">
-                  <option value="BRL">BRL</option>
-                  <option value="USD">USD</option>
-                  <option value="EUR">EUR</option>
-                  <option value="GBP">GBP</option>
-                  <option value="CNY">CNY</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="exchange-rate">Obtendo taxa de cambio...</div>
-          <button onclick="convert()">Obter cotação</button>
-        </div>
       </div>
-  
-</body>
-</html>
+      <div class="form">
+        <div class="amount">
+          <p>Valor a converter</p>
+          <input type="text" id="amount" value="1">
+        </div>
+        <div class="drop-list">
+          <div class="from">
+            <p>De</p>
+            <div class="select-box">
+              <select id="from">
+                <option value="BRL">BRL</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="CNY">CNY</option>
+              </select>
+            </div>
+          </div>
+          <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+          <div class="to">
+            <p>Para</p>
+            <div class="select-box">
+              <select id="to">
+                <option value="BRL">BRL</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="CNY">CNY</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="extrato">
+          <span>Obtendo Extrato...</span> 
 
+        </div>
+        <div class="resultados">
+          <ul id="transactionHistory">
+            
+          </ul>
+        </div>
+        <button onclick="convert()">Obter cotação</button>
+        <button onclick="toggleTransactionHistory()">Exibir/ocultar extrato</button>
+        <button onclick="clearTransactionHistory()">Limpar Histórico</button>
+      </div>
     </section>
     <section class="last--info">
-
     </section>
   </main>
 
