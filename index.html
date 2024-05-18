@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quer enviar ou receber dinheiro do exterior? Na Remessa tem rapidez, segurança e economia. Transfira seu dinheiro em até 24h, com rapidez e sem burocracia. Faça Seu Cadastro Agora! Pagamento de Serviços. Cadastro Rápido e Seguro. Gastos com moradia.">
+    <meta name="keywords" content="Envie e Receba Dinheiro do Exterior Com Economia, Segurança e Rapidez">
     <title>Remessa Coder - Conversor de Moedas</title>
     <script defer src="./assets/js/mobile.js"></script>
     <script defer src="./assets/js/conversao.js"></script>
@@ -12,36 +14,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <header>
-      <div class="container">
-          <div class="logo">
-              <a href="./index.html">
-                  <img src="./assets/img/logo.png" alt="Logo">
-                  <span> Remessa Coder</span>
-              </a>
-          </div>
-          <nav class="menu--desktop">
-              <ul>
-                  <li class="nav--itens">
-                    <a class="nav--link" href="##">Pessoa Física</a>
-                  </li>
-                  <li class="nav--itens">
-                    <a class="nav--link" href="##">Pessoa Jurídica</a>
-                  </li>
-                  <li class="nav--itens">
-                    <a class="nav--link" href="#conversor">Cotações</a>
-                  </li>
-              </ul>
-          </nav>
-          <div class="nav--btn">
-            <a class="btn--1" href="##"> <button>Entrar</button></a>
-            <a class="btn--2" id="btn--2" href="##"> <button>Cadastrar</button></a>
-            <div class="btn--open">
-             <button onclick="menuShow()"><img class="icon" src="./assets/img/menu.svg" alt="botão d eabrir menu"></button> 
-            </div>
-          </div>
+    <div class="container"><!--------------- LOGO ----------------->
+      <div class="logo">
+          <a href="./index.html">
+              <img src="./assets/img/logo.png" alt="Logo">
+              <span> Remessa Coder</span>
+          </a>
+      </div><!--------------- LOGO ----------------->
+      <nav class="menu--desktop"><!--------------- MENU DE NAVEGAÇÃO ----------------->
+        <ul>
+            <li class="nav--itens">
+              <a class="nav--link" href="##">Pessoa Física</a>
+            </li>
+            <li class="nav--itens">
+              <a class="nav--link" href="##">Pessoa Jurídica</a>
+            </li>
+            <li class="nav--itens">
+              <a class="nav--link" href="#conversor">Cotações</a>
+            </li>
+        </ul>
+      </nav><!--------------- MENU DE NAVEGAÇÃO ----------------->
+        <div class="nav--btn"><!--------------- BOTÕES DO HEADER ----------------->
+          <a class="btn--1" href="##"> <button>Entrar</button></a>
+          <a class="btn--2" id="btn--2" href="##"> <button>Cadastrar</button></a>
+          <div class="btn--open"><!--------------- BOTÃO MOBILE ----------------->
+            <button onclick="menuShow()"><img class="icon" src="./assets/img/menu.svg" alt="botão d eabrir menu"></button> 
+          </div><!--------------- BOTÃO MOBILE ----------------->
+        </div><!--------------- BOTÕES DO HEADER ----------------->
       </div>
-      <nav class="menu--mobile">
+      <nav class="menu--mobile"><!--------------- MENU DE NAVEGAÇÃO MOBILE ----------------->
         <ul>
             <li class="nav--itens">
               <a class="nav--link" href="##">Pessoa Física</a>
@@ -55,7 +58,8 @@
             <a class="btn--link" href="##">Cadastre-se aqui</a>
             <a class="btn--1" href="##"> <button>Entrar</button></a>
         </ul>          
-    </nav>
+      </nav><!--------------- MENU DE NAVEGAÇÃO MOBILE ----------------->
+    </header>
   </header>
 
   <main>
@@ -78,59 +82,55 @@
     <section class="cards" id="cards">
 
     </section>
-    <section class="conversor--container" id="conversor"> 
-      
-        <div class="result" id="result">
-
-        </div> 
+    <section class="conversor--container" id="conversor"> <!------------ SESSÃO CONVERSOR ------------>
+      <div class="result" id="result"></div> <!------------ RESULTADO DA CONVERSSÃO ------------>
       <div class="wrapper">
         <div class="logo--convert">
           <img src="./assets/img/remessa.ico" alt="Logo remessa coder">
             <span>
               Remessa Coder 
             </span>
-      </div>
-      <div class="form">
-        <div class="amount">
-          <p>Valor a converter</p>
-          <input type="text" id="amount" value="1">
         </div>
-        <div class="drop-list">
-          <div class="from">
-            <p>De</p>
-            <div class="select-box">
-              <select id="from">
-                <option value="BRL">BRL</option>
-                <option value="USD">USD</option>
-                <option value="EUR">EUR</option>
-                <option value="GBP">GBP</option>
-                <option value="CNY">CNY</option>
-              </select>
+        <div class="form">
+          <div class="amount">
+            <p>Valor a converter</p>
+            <input type="text" id="amount" value="1">
+          </div>
+          <div class="drop-list">
+            <div class="from">
+              <p>De</p>
+              <div class="select-box">
+                <select id="from">
+                  <option value="BRL">BRL</option>
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="GBP">GBP</option>
+                  <option value="CNY">CNY</option>
+                </select>
+              </div>
+            </div>
+            <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+            <div class="to">
+              <p>Para</p>
+              <div class="select-box">
+                <select id="to">
+                  <option value="BRL">BRL</option>
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="GBP">GBP</option>
+                  <option value="CNY">CNY</option>
+                </select>
+              </div>
             </div>
           </div>
-          <div class="icon"><i class="fas fa-exchange-alt"></i></div>
-          <div class="to">
-            <p>Para</p>
-            <div class="select-box">
-              <select id="to">
-                <option value="BRL">BRL</option>
-                <option value="USD">USD</option>
-                <option value="EUR">EUR</option>
-                <option value="GBP">GBP</option>
-                <option value="CNY">CNY</option>
-              </select>
-            </div>
+          <div class="extrato">
+            <span>Obtendo Extrato...</span> 
           </div>
-        </div>
-        <div class="extrato">
-          <span>Obtendo Extrato...</span> 
-
-        </div>
-        <div class="resultados">
-          <ul id="transactionHistory">
-            
-          </ul>
-        </div>
+          <div class="resultados">
+            <ul id="transactionHistory">
+              <!----------- li CRIADA NO JAVASCRIPT --------->
+            </ul>
+          </div>
         <button onclick="convert()">Obter cotação</button>
         <button onclick="toggleTransactionHistory()">Exibir/ocultar extrato</button>
         <button onclick="clearTransactionHistory()">Limpar Histórico</button>
@@ -215,7 +215,6 @@
           </div>
         </div>
     </div>
-    <!--------- última linha do footer  ---------->
   </footer>
     
 </body>

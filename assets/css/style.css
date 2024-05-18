@@ -218,12 +218,12 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      height: 150vh;
+      height: 100vh;
       background-color: var(--blue-500);
     }
     .wrapper{
-      width: 370px;
-      padding: 30px;
+      width: 350px;
+      padding: 20px;
       border-radius: 25px;
       background: var(--white);
       box-shadow: 7px 7px 20px #0000000d;
@@ -233,17 +233,17 @@
       text-align: center;
       justify-content: center;
       padding: 10px;
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 600;
       margin-bottom: 20px;
      font-family: var(--font-primary);
     }
     .logo--convert img{
-      width: 1.8rem;
+      width: 1.6rem;
       margin-right: 5px;
     }
-    .wrapper form{
-      margin: 40px 0 20px 0;
+    .wrapper .form{
+      margin: 20px 0 10px 0;
     }
     .form :where(input, select, button){
       width: 100%;
@@ -256,7 +256,7 @@
       margin-bottom: 5px;
     }
     .form input{
-      height: 50px;
+      height: 40px;
       font-size: 17px;
       padding: 0 15px;
       border: 1px solid #999;
@@ -274,7 +274,7 @@
     .drop-list .select-box{
       display: flex;
       width: 115px;
-      height: 45px;
+      height: 40px;
       align-items: center;
       border-radius: 30px;
       justify-content: center;
@@ -310,7 +310,7 @@
       margin: 20px 0 30px;
     }
     .form button{
-      height: 52px;
+      height: 40px;
       color: var(--blue-500);
       font-size: 17px;
       cursor: pointer;
@@ -340,10 +340,9 @@
       align-items: center;
       box-sizing: content-box;
       padding: 1.5rem;
-
     }
     .resultados ul{
-      display: flex;
+      display: none;
       flex-direction: column;
       justify-content: center;
       text-align: center;
@@ -363,19 +362,19 @@
       margin-bottom: 10px;
     }
     .text--resultL {
-      font-size: 2.5rem;
+      font-size: 3.5rem;
       font-weight: 700;
     }
     .text--resultS {
-      font-size: 1rem;
-    }
-    
+      font-size: 1.5rem;
+    }   
+
     /* SECTION INFOS */
 
-  .last--info {
-    height: 50vh;
-    background-color: var(--white);
-  }
+    .last--info {
+      height: 50vh;
+      background-color: var(--white);
+    }
   }
 
 @layer footer {
@@ -613,7 +612,16 @@
 
 
     /* --------------------- MAIN --------------------- */
-
+    .result {
+      line-height: 1rem;
+    }
+    .text--resultL {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    .text--resultS {
+      font-size: 1rem;
+    }
     /* ------------------------------------------------ */
     
 
@@ -654,6 +662,18 @@
       font-size: 7px;
       line-height: 1rem;
     }
+
+    .result {
+      line-height: 1rem;
+    }
+    .text--resultL {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    .text--resultS {
+      font-size: .8rem;
+    }
+
     footer > .interface{
       padding: 2.5rem 4%;
       flex-direction: column;
@@ -686,21 +706,17 @@
     .hero__subtitle i {
       margin-right: 5px;
     }
-
+    .conversor--container {
+      height: 120vh;
+    }
     .result {
-      text-align: left;
-      padding: 1rem 4%;
-      margin-bottom: 2.2rem;
-      color: var(--white);
       line-height: 8px;
-      white-space: pre-line;
     }
     .text--resultL {
-      font-size: 24px;
-      font-weight: 700;
+      font-size: 36px;
     }
     .text--resultS {
-      font-size: 8px;
+      font-size: 7px;
     }
     
   }
@@ -708,7 +724,115 @@
     .coders{       
      flex-direction: column;
     }
+
+    .wrapper{
+      width: 340px;
+      padding: 20px;
+   
+    }
+    .text--resultL {
+      font-size: 30px;
+    }
+    .text--resultS {
+      font-size: 7px;
+    }
   }
+  @media only screen and (max-width: 340px){
+    .hero__title {
+      justify-content: center;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1rem; 
+    }
+    .conversor--container {
+      height: 150vh;      
+    }
 
+    .wrapper{
+      width: 300px;
+      padding: 15px;
+    }
+    .wrapper{
+      width: 280px;
+      padding: 20px;
+    }
+    .logo--convert{
+      padding: 10px;
+      font-size: 16px;
+    }
+    .logo--convert img{
+      width: 1.1rem;
+      margin-right: 5px;
+    }
+    .wrapper .form{
+      margin: 20px 0 20px 0;
+    }
+    .form :where(input, select, button){
+      width: 100%;
+      outline: none;
+      border-radius: 30px;
+      border: none;
+    }
+    .form p{
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    .form input{
+      height: 30px;
+      font-size: 12px;
+      padding: 0 10px;
+      border: 1px solid #999;
+    }
+    .form input:focus{
+      padding: 0 14px;
+      border: 2px solid var(--blue-500);
+    }
+    .form .drop-list{
+      display: flex;
+      margin-top: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .drop-list .select-box{
+      width: 80px;
+      height: 40px;
+    }
+    .select-box select{
+      width: auto;
+      font-size: 12px;
+    }
+    .select-box select::-webkit-scrollbar{
+      width: 8px;
+    }
 
+    .drop-list .icon{
+      margin-top: 30px;
+      font-size: 14px;
+      padding: 10px;
+    }
+    .form .exchange-rate{
+      font-size: 8px;
+      margin: 20px 0 30px;
+    }
+    .form button{
+      height: 30px;
+      font-size: 12px;
+      cursor: pointer;
+      background: var(--white);
+      transition: 0.3s ease;
+      border: solid var(--blue-500) 1px;
+    
+    }
+    .form button:hover{
+      background: var(--blue-500);
+      color: var(--white);
+    }
+    .text--resultL {
+      font-size: 20px;
+    }
+    .text--resultS {
+      font-size: 5px;
+    }
+
+  }
 }

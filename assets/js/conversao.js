@@ -73,7 +73,8 @@ function convert() {
 
         updateTransactionHistory();
     } else {
-        result.innerHTML = `<span class="text--resultL">Erro: valor inválido</span>`;
+        result.innerHTML = `<span class="text--resultL">Erro:</span><br> 
+        <span class="text--resultS">Moedas selecionadas inválidas</span>`;
     }
 }
 
@@ -99,7 +100,7 @@ function toggleTransactionHistory() {
         historyElement.style.display = 'block';
     } else {
         historyElement.style.display = 'none';
-    }
+    } // Função para exibir e ocultar o extrato 
 }
 function clearTransactionHistory() {
     localStorage.removeItem('conversionHistory');

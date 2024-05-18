@@ -1,3 +1,4 @@
+/* AÇÕES BOTÃO MENU */
 function menuShow() {
     let menuMobile = document.querySelector('.menu--mobile');
     if (menuMobile.classList.contains('open')) {
@@ -11,6 +12,7 @@ function menuShow() {
     hideButton.classList.toggle('hide');
 }
 
+/* ACÕES BOTÃO CADASTRAR */
 window.addEventListener("scroll", function() {
     let btnScroll = document.querySelector('#btn--2');
     btnScroll.classList.toggle('btn--scroll', window.scrollY > 0);
