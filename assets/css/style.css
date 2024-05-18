@@ -237,6 +237,7 @@
       font-weight: 600;
       margin-bottom: 20px;
      font-family: var(--font-primary);
+     color: var(--blue-500);
     }
     .logo--convert img{
       width: 1.6rem;
