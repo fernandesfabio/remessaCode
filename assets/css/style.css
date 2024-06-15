@@ -8,17 +8,18 @@
     
     :root {
         --exchange-rate-color: #555;
-        --input-background: rgba(119, 136, 153, 0.15);
-        --input-shadow: rgba(119, 136, 153, 0.35);
+        --input-background: #77889926;
+        --input-shadow: #77889959;
         --input-border: #ddd;
-        --shadow-1: rgba(0, 0, 0, 0.25);
-        --shadow-2: rgba(0, 0, 0, 0.15);
+        --shadow-1: #00000040;
+        --shadow-2: #00000026;
         --loading-bg-1: #c2cfd6;
         --loading-bg-2: #f0f3f5;
         --green-gradient: linear-gradient(180deg, #278848 0%, #59a928 100%);
         --white: #fff;
         --gray-400: #9ca4ab;
         --gray-100: #fafafa;
+        --gray-300: rgba(239, 240, 241);
         --yellow-200: #fcfdc7;
         --gray-shadow: #07070783;
         --christi-400: #80d14a;
@@ -162,11 +163,13 @@
 @layer main {
 
     .hero__container {
-      padding: 7rem 8%;     
+      padding: 7rem 8%; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;  
     }
     .hero {
-      background-image: url(../img/heroRemessa.png) ;
-      min-height: 56rem;
+      background-image: url(../img/1920_hero_conta_global3_d6f4aac96b.png) ;
       width: 100%;
       background-repeat: no-repeat;
       background-size: cover;
@@ -190,7 +193,7 @@
       display: flex;
       justify-content: flex-start;
       text-align: left;
-      color: var(--black-800);
+      color: var(--white);
       font-family: var(--font-primary);
       font-weight: 600;
       font-size: 2rem;
@@ -198,7 +201,7 @@
       padding-bottom: 3rem;   
     }
     .hero__subtitle {
-      color: var(--black-800);
+      color: var(--white);
       font-size: 16px;
       font-family: var(--font-secondary);
       font-weight: 400;
@@ -209,7 +212,7 @@
     }
     .hero__subtitle i {
       margin-right: 10px;
-      color: var(--blue-500);
+      color: var(--white);
     }
 
     /* SECTION CARDS */
@@ -303,7 +306,7 @@
       color: var(--green);
     }
     
-    button {
+    .btn--conversor {
       border: none;
       cursor: pointer;
       font-size: 1rem;
@@ -368,6 +371,7 @@
     .swap-btn {
       width: 40px;
       height: 40px;
+      border: none;
       border-radius: 50%;
       background: var(--blue-500);
       color: var(--white);
@@ -378,6 +382,7 @@
       inset-inline-start: 50%;
       transform: translate(-50%, -50%);
       transition: 0.3s;
+      cursor: pointer;
     }
     
     .swap-btn:hover {
@@ -491,8 +496,7 @@
       border-radius: 0.25rem;
       content: "";
       animation: loading 1s linear infinite alternate;
-    }
-    
+    }    
     @keyframes loading {
       from {
         background: var(--loading-bg-1);
@@ -529,6 +533,80 @@
     .text--resultS {
       font-size: 1.5rem;
     }   
+
+
+    /* SECTYION CARDS */
+    .title {
+      padding: 10px;
+    }
+    .cards{
+      background-color: var(--gray-300);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 1.5rem 6%;
+      
+    }
+    .cards__container {
+      max-width: 1200px;
+      width: 100%;
+      padding: 1.5rem 4;
+  
+    }
+    .cards__container .slide-button {
+      display: none;
+    }
+    .slider-wrapper .image-list {
+      display: grid;
+      gap: 18px;
+      font-size: 0;  
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 20px;
+      grid-template-columns: repeat(6, 1fr);
+      place-items: center;
+    }
+    .slider-wrapper .image-list::-webkit-scrollbar {
+      display: none;
+    }
+    .slider-wrapper .image-list img {
+      width: auto;
+      object-fit: cover;
+      max-height: 400px; 
+      border: none;
+      border-radius: 15px;
+    }
+
+    .slider-wrapper{
+      position: relative;
+    }
+    .slider-wrapper .slide-button {
+      display: block;
+      position: absolute;
+      top: 50%;
+      height: 50px;
+      width: 50px;
+      color: var(--blue-500);
+      outline: none;
+      font-size: 1.8rem;
+      font-weight: 800;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      transform: translateY(-50%);
+      z-index: 1111;
+    }
+
+    .slider-wrapper .slide-button#prev-slide {
+      left: -25px;
+      display: none;
+    }
+    .slider-wrapper .slide-button#next-slide {
+      right: -25px;
+      
+    }
+   
 
     /* SECTION INFOS */
 
@@ -879,7 +957,9 @@
     .text--resultS {
       font-size: 7px;
     }
-    
+    .title {
+      font-size: 1rem;
+    }
   }
   @media only screen and (max-width: 380px) {
     .coders{       
@@ -994,6 +1074,5 @@
     .text--resultS {
       font-size: 5px;
     }
-
   }
 }
