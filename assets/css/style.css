@@ -721,7 +721,18 @@
       font-size: 14px;
      }
     /* -------------------------------------------------- */
-   
+  }
+  @media only screen and (max-width: 1583px){
+    .hero__container {
+      flex-direction: column;
+    }
+    .hero {
+      background-image: none;
+      background-color: var(--blue-500);    
+    }
+    .hero__subtitle {
+      display: none;
+    }
   }
   @media only screen and (max-width: 1377px ){
     /* --------------------- HEADER --------------------- */
