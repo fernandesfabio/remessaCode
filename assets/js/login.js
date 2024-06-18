@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 .then(() => {
                     loadingScreen.style.display = 'none';
-                    window.location.href = 'conversoes.html';
+                    window.location.href = 'conversor.html';
 
                 });
         } else {
@@ -53,5 +53,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
     });
+    // Função para redirecionar para a página inicial
+    function logout() {
+        window.location.href = 'index.html'; // Redireciona para a página inicial (home)
+    }
 
-});
+    // Adiciona o event listener ao botão de logout
+    document.getElementById('logoutButton').addEventListener('click', logout);
+    });
+
+

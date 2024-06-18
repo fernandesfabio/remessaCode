@@ -18,7 +18,7 @@
     <header>
         <div class="container"><!--------------- LOGO ----------------->
             <div class="logo">
-                <a href="/index.html">
+                <a href="../pages/index.html">
                     <img src="../img/logo.png" alt="Logo">
                     <span> Remessa Coder</span>
                 </a>
@@ -26,10 +26,10 @@
             <nav class="menu--desktop"><!--------------- MENU DE NAVEGAÇÃO ----------------->
             <ul>
                 <li class="nav--itens">
-                    <a class="nav--link" href="##">Pessoa Física</a>
+                    <a class="nav--link" href="../pages/pessoaFisica.html">Pessoa Física</a>
                 </li>
                 <li class="nav--itens">
-                    <a class="nav--link" href="##">Pessoa Jurídica</a>
+                    <a class="nav--link" href="../pages/pessoaJuridica.html">Pessoa Jurídica</a>
                 </li>
                 <li class="nav--itens">
                     <a class="nav--link" href="./conversor.html">Cotações</a>
@@ -37,8 +37,9 @@
             </ul>
             </nav><!--------------- MENU DE NAVEGAÇÃO ----------------->
             <div class="nav--btn"><!--------------- BOTÕES DO HEADER ----------------->
-                <a class="btn--1" href="./login.html"> <button>Entrar</button></a>
-                <a class="btn--2" id="btn--2" href="./cadastro.html"> <button>Cadastrar</button></a>
+                <a class="btn--1" href="./login.html"><button id="logoutButton">Sair</button>
+                </a>
+               
                 <div class="btn--open"><!--------------- BOTÃO MOBILE ----------------->
                 <button onclick="menuShow()"><img class="icon" src="../img/menu.svg" alt="botão d eabrir menu"></button> 
                 </div><!--------------- BOTÃO MOBILE ----------------->
@@ -55,8 +56,8 @@
             <li class="nav--itens">
                 <a class="nav--link" href="./conversor.html">Cotações</a>
             </li>
-            <a class="btn--link" href="../pages/cadastro.html">Cadastre-se aqui</a>
-            <a class="btn--1" href="./login.html"> <button>Entrar</button></a>
+            <a class="btn--1" href="./login.html"> <button id="logoutButton">Sair</button>
+            </a>
         </ul>          
         </nav><!--------------- MENU DE NAVEGAÇÃO MOBILE ----------------->
         
@@ -86,18 +87,19 @@
                 </div>
                 <div class="exchange-rate">
                     <h5>Taxa de câmbio</h5>
-                    <span id="exchange-rate"></span>
+                    <i class="fa-regular fa-money-bill-1"></i> <span id="exchange-rate"></span>
                 </div>
-                <div class="resultados">
-                    <ul id="transaction-history">
-                    <!----------- li CRIADA NO JAVASCRIPT --------->
-                    </ul>
-                </div>
+                
                 <div btn---dados>
-                <button class="btn--f" id="send-money-btn">Enviar Dinheiro</button>
+                <button class="btn--i" id="send-money-btn"><i class="fa-solid fa-bolt"></i>Enviar Dinheiro</button>
                 <button class="btn--f" id="view-history-btn">Ver/Ocultar Extrato</button>
                 <button class="btn--f" id="clear-history-btn" class="hidden">Limpar Extrato</button>
                 </div>
+                <div class="resultados">
+                  <ul id="transaction-history">
+                  <!----------- li CRIADA NO JAVASCRIPT --------->
+                  </ul>
+              </div>
                 <div class="drawer" id="drawer">
                 <div class="title">
                     <button id="dismiss-btn">

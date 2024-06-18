@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+
+.logo--cadastro{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+   font-family: var(--font-primary);
+   color: var(--blue-500);
+   padding: 0;
+  }
+  .logo--cadastro img{
+    width: 1.6rem;
+    margin-right: 5px;
+  }
 .page-full {
     display: flex;
     justify-content: center;
@@ -23,6 +40,7 @@
     align-content: center;
     justify-content: center;
     width: 50%;
+    
 }
 
 .formRegistration {
@@ -138,4 +156,14 @@
     .background {
         display: none;
     }
+    
+}
+@media only screen and (max-width: 500px ){
+    .logo--cadastro{
+        font-size: 16px;
+      }
+      .logo--cadastro img{
+        height: 1.6rem;
+        margin-right: 5px;
+      }
 }

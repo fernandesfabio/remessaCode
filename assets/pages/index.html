@@ -6,10 +6,10 @@
     <meta name="description" content="Quer enviar ou receber dinheiro do exterior? Na Remessa tem rapidez, segurança e economia. Transfira seu dinheiro em até 24h, com rapidez e sem burocracia. Faça Seu Cadastro Agora! Pagamento de Serviços. Cadastro Rápido e Seguro. Gastos com moradia.">
     <meta name="keywords" content="Envie e Receba Dinheiro do Exterior Com Economia, Segurança e Rapidez">
     <title>Remessa Coder - Conversor de Moedas</title>
-    <script defer src="./assets/js/mobile.js"></script>
-    <script defer src="./assets/js/app.js"></script>
-    <link rel="favicon icon" href="./assets/img/remessa.ico">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <script defer src="../js/mobile.js"></script>
+    <script defer src="../js/app.js"></script>
+    <link rel="favicon icon" href="../img/remessa.ico">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
@@ -20,28 +20,28 @@
     <div class="container"><!--------------- LOGO ----------------->
       <div class="logo">
           <a href="./index.html">
-              <img src="./assets/img/logo.png" alt="Logo">
+              <img src="../img/logo.png" alt="Logo">
               <span> Remessa Coder</span>
           </a>
       </div><!--------------- LOGO ----------------->
       <nav class="menu--desktop"><!--------------- MENU DE NAVEGAÇÃO ----------------->
         <ul>
             <li class="nav--itens">
-              <a class="nav--link" href="##">Pessoa Física</a>
+              <a class="nav--link" href="../pages/pessoaFisica.html">Pessoa Física</a>
             </li>
             <li class="nav--itens">
-              <a class="nav--link" href="##">Pessoa Jurídica</a>
+              <a class="nav--link" href="../pages/pessoaJuridica.html">Pessoa Jurídica</a>
             </li>
             <li class="nav--itens">
-              <a class="nav--link" href="./assets/pages/conversor.html">Cotações</a>
+              <a class="nav--link" href="../pages/login.html">Cotações</a>
             </li>
         </ul>
       </nav><!--------------- MENU DE NAVEGAÇÃO ----------------->
         <div class="nav--btn"><!--------------- BOTÕES DO HEADER ----------------->
-          <a class="btn--1" href="./assets/pages/login.html"> <button>Entrar</button></a>
-          <a class="btn--2" id="btn--2" href="assets/pages/cadastro.html"> <button>Cadastrar</button></a>
+          <a class="btn--1" href="../pages/login.html"> <button>Entrar</button></a>
+          <a class="btn--2" id="btn--2" href="../pages/cadastro.html"> <button>Cadastrar</button></a>
           <div class="btn--open"><!--------------- BOTÃO MOBILE ----------------->
-            <button onclick="menuShow()"><img class="icon" src="./assets/img/menu.svg" alt="botão d eabrir menu"></button> 
+            <button onclick="menuShow()"><img class="icon" src="../img/menu.svg" alt="botão d eabrir menu"></button> 
           </div><!--------------- BOTÃO MOBILE ----------------->
         </div><!--------------- BOTÕES DO HEADER ----------------->
       </div>
@@ -54,7 +54,7 @@
               <a class="nav--link" href="##">Pessoa Jurídica</a>
             </li>
             <li class="nav--itens">
-              <a class="nav--link" href="./assets/pages/conversor.html">Cotações</a>
+              <a class="nav--link" href="./assets/pages/login.html">Cotações</a>
             </li>
             <a class="btn--link" href="./assets/pages/cadastro.html">Cadastre-se aqui</a>
             <a class="btn--1" href="./assets/pages/login.html"> <button>Entrar</button></a>
@@ -79,7 +79,7 @@
         </div>
         <div class="wrapper">
           <div class="logo--convert">
-            <img src="./assets/img/remessa.ico" alt="Logo remessa coder">
+            <img src="../img/remessa.ico" alt="Logo remessa coder">
               <span>
                 Remessa Coder 
               </span>
@@ -99,15 +99,15 @@
           </div>
             <div class="exchange-rate">
               <h5>Taxa de câmbio</h5>
-              <span id="exchange-rate"></span>
+              <i class="fa-regular fa-money-bill-1"></i><span id="exchange-rate"></span>
             </div>
             <div class="resultados">
               <ul id="transaction-history">
                 <!----------- li CRIADA NO JAVASCRIPT --------->
               </ul>
             </div>
-          <div btn---dados>
-            <button class="btn--f" id="send-money-btn">Enviar Dinheiro</button>
+          <div btn--dados>
+            <a href="../pages/login.html" class="btn--i"><i class="fa-solid fa-bolt"></i>Enviar Dinheiro</a>
           </div>
           <div class="drawer" id="drawer">
             <div class="title">
@@ -124,6 +124,27 @@
         </div> 
       </div>
     </section> <!------------Final hero conteúdo------------>
+    <section class="hero-phone">
+      <div class="hero-phone-full">
+        <div class="hero-phone-img">
+          <img src="../img/hero-phone.png">
+        </div>
+        <div class="phone-text">
+          <h1>
+            Agora você tem uma<br>
+            Conta global e um cartão<br>
+            para usar no muundo todo
+          </h1>
+          <p>
+            Baixe o app da Remessa e tenhga tudo que você precisa para ter uma vida mais global.
+          </p>
+          <div class="app-store">
+            <a><img src="../img/googleplay.png"></a>
+            <a><img src="../img/appstore.png"></a>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="cards" id="cards">
       <div>
         <h2 class="title">Soluções para diversas necessidades</h2>
@@ -133,17 +154,17 @@
         <div class="slider-wrapper" data-slide="wrapper">
           <button id="prev-slide" class="slide-button" data-slide="slide-btn"><i class="fa-solid fa-chevron-left"></i></button>
           <div class="image-list" data-slide="list">
-              <img src="./assets/img/transferencia.png" alt="Capa filme/serie Popular">
+              <img src="../img/transferencia.png" alt="Capa filme/serie Popular">
             
-              <img src="./assets/img/viajar.png" alt="Capa filme/serie Popular">
+              <img src="../img/viajar.png" alt="Card viajar">
            
-              <img src="./assets/img/enviar.png " alt="Capa filme/serie Popular">
+              <img src="../img/enviar.png " alt="Card enviar">
       
-              <img src="./assets/img/receber.png" alt="Capa filme/serie Popular">
+              <img src="../img/receber.png" alt="Card receber">
           
-              <img src="./assets/img/google.png" alt="Capa filme/serie Popular">
+              <img src="../img/google.png" alt="Card google">
          
-              <img src="./assets/img/startups.png" alt="Capa filme/serie Popular">
+              <img src="../img/startups.png" alt="Card startups">
           </div>
           <button id="next-slide" class="slide-button" data-slide="slide-btn"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
@@ -152,6 +173,48 @@
     </section>
    
     <section class="last--info">
+      <div class="text--center">
+        <h2>Mais Beneficios para você enviar ou receber dinheiro</h2>
+    </div>
+     <div class="cards-info">
+      <div class="cards-dados">
+        <img src="../img/save.svg">
+        <h3>
+          Taxas até 8 vezes<br>
+          menores que os bancos
+        </h3>
+        <P>
+        Além dos custos baixos, você<br>
+        não precisa falar com gerentes<br>
+        nem lidar com a burocracia.
+        </P>
+      </div>
+      <div class="cards-dados">
+        <i class="fa-solid fa-lock"></i>
+        <h3>
+          Segurança que o seu<br>
+          dinheiro vai chegar
+        </h3>
+        <P>
+          Seguimos protocolos rígidos<br>
+          para garantir que sua<br>
+          transferência chegue de forma<br>
+          segura e rápida.
+        </P>
+      </div>
+      <div class="cards-dados">
+        <i class="fa-regular fa-face-grin-hearts"></i>
+        <h3>
+          Plataforma intuitiva e<br>
+          fácil de usar
+        </h3>
+        <p>
+          Qualquer pessoa poide fazer<br>
+          sua transferência sozinha e<br>
+          100% online.
+        </p>
+      </div>
+     </div>
     </section>
   </main>
 
@@ -159,7 +222,7 @@
     <div class="interface">
       <div>
         <div class="logo--footer">
-            <img src="./assets/img/remessaWhite.png" alt="logo Remessa Coder" />
+            <img src="../img/remessaWhite.png" alt="logo Remessa Coder" />
             <span> Remessa Coder</span>
         </div>
         <div class="text--small">
@@ -207,7 +270,7 @@
             <span class="text--small">Correspondente cambial autorizado</span>
         </div>
         <div class="text--center">
-            <img src="./assets/img/remessaWhite.png" alt="Logo remessa coder">
+            <img src="../img/remessaWhite.png" alt="Logo remessa coder">
             <span>
               Remessa Coder 
             </span>

@@ -1,5 +1,6 @@
 const key = "fca_live_rMwakp88F0k0BVUFVWtwtgUPdd2OEsIASXs0KFna";
 const transactionKey = 'transactions';
+const balanceKey = 'balances';
 const state = {
   openedDrawer: null,
   currencies: [],
@@ -7,7 +8,7 @@ const state = {
   base: "BRL",
   target: "USD",
   rates: {},
-  baseValue: 1,
+  baseValue: 0,
 };
 
 //* selectors
@@ -27,7 +28,9 @@ const ui = {
   sendMoneyBtn: document.getElementById("send-money-btn"),
   viewHistoryBtn: document.getElementById("view-history-btn"),
   clearHistoryBtn: document.getElementById("clear-history-btn"),
-  transactionHistory: document.getElementById("transaction-history")
+  transactionHistory: document.getElementById("transaction-history"),
+  currentBalance: document.getElementById("current-balance"),
+  currencyBalances: document.getElementById("currency-balances")
 };
 
 //* event listeners
@@ -50,6 +53,8 @@ const setupEventListeners = () => {
 const initApp = () => {
   fetchCurrencies();
   fetchExchangeRate();
+  updateBalances();
+  updateInputs();
 };
 
 const showDrawer = (e) => {
@@ -83,7 +88,7 @@ const selectPair = (e) => {
 
 const convertInput = () => {
   const inputValue = ui.baseInput.value.replace(/,/g, '.');
-  state.baseValue = parseFloat(inputValue) || 1;
+  state.baseValue = parseFloat(inputValue) || 0;
   loadExchangeRate();
 };
 
@@ -142,11 +147,12 @@ const updateButtons = () => {
 };
 
 const updateInputs = () => {
-  const { base, baseValue, target, rates } = state;
-  const result = baseValue * rates[base][target];
-  ui.targetInput.value = result.toFixed(2);
-  ui.baseInput.value = baseValue.toFixed(2);
-};
+    const { base, baseValue, target, rates } = state;
+    const result = baseValue * rates[base][target];
+    ui.targetInput.value = result.toFixed(2);  // Mantém o resultado formatado
+    ui.baseInput.value = baseValue.toString(); // Remove a formatação ao exibir o valor base
+  };
+  
 
 const updateExchangeRate = () => {
   const { base, target, rates } = state;
@@ -175,6 +181,21 @@ const loadExchangeRate = () => {
   }
 };
 
+const updateBalances = () => {
+  const balances = getBalances();
+  const balanceList = Object.keys(balances).map(currency => 
+    `<li>${currency}: ${formatNumber(balances[currency])}</li>`
+  ).join('');
+  ui.currencyBalances.innerHTML = balanceList;
+  updateBalance();
+};
+
+const updateBalance = () => {
+  const balances = getBalances();
+  const brlBalance = balances['BRL'] || 0;
+  ui.currentBalance.textContent = `R$ ${formatNumber(brlBalance)}`;
+};
+
 //* transaction functions
 
 const sendMoney = () => {
@@ -190,12 +211,21 @@ const sendMoney = () => {
     convertedAmount: formatNumber(convertedAmount)
   };
 
-  saveTransaction(transaction);
-  Swal.fire({
-    title: "Valor enviado com sucesso!",
-    text: "Enviado " + formatNumber(convertedAmount) + " " + target,
-    icon: "success"
-  });
+  if (deductBalance(base, amount)) {
+    saveTransaction(transaction);
+    Swal.fire({
+      title: "Valor enviado com sucesso!",
+      text: "Enviado " + formatNumber(convertedAmount) + " " + target,
+      icon: "success"
+    });
+    updateBalances();
+  } else {
+    Swal.fire({
+      title: "Saldo insuficiente",
+      text: "Você não tem saldo suficiente para essa transferência.",
+      icon: "error"
+    });
+  }
 };
 
 const saveTransaction = (transaction) => {
@@ -212,14 +242,12 @@ const displayTransactions = () => {
   const transactions = getTransactions();
   ui.transactionHistory.innerHTML = transactions.map(tx => `
     <div>
-    -----------------------------------------<br>
-      <p>Data: ${tx.date}</p>
-      <p>De: ${tx.amount} ${tx.from}</p>
-      <p>Para: ${tx.convertedAmount} ${tx.to}</p>
+      <p>Date: ${tx.date}</p>
+      <p>From: ${tx.amount} ${tx.from}</p>
+      <p>To: ${tx.convertedAmount} ${tx.to}</p>
     </div>
   `).join('');
 };
-
 
 const toggleTransactionHistory = () => {
   if (ui.transactionHistory.style.display === 'none' || ui.transactionHistory.style.display === '') {
@@ -270,6 +298,25 @@ const formatNumber = (number) => {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   });
+};
+
+const deductBalance = (currency, amount) => {
+  const balances = getBalances();
+  if (balances[currency] >= amount) {
+    balances[currency] -= amount;
+    setBalances(balances);
+    return true;
+  }
+  return false;
+};
+
+const getBalances = () => {
+  return JSON.parse(localStorage.getItem(balanceKey)) || { 'BRL': 1000.00 };
+};
+
+const setBalances = (balances) => {
+  localStorage.setItem(balanceKey, JSON.stringify(balances));
+  updateBalances();
 };
 
 //* initialization
