@@ -3,10 +3,10 @@ function menuShow() {
     let menuMobile = document.querySelector('.menu--mobile');
     if (menuMobile.classList.contains('open')) {
         menuMobile.classList.remove('open');
-        document.querySelector('.icon').src = "../img/menu.svg"
+        document.querySelector('.icon').src = "/assets/img/menu.svg"
     }else {
         menuMobile.classList.add('open')
-        document.querySelector('.icon').src = "../img/close.svg"
+        document.querySelector('.icon').src = "/assets/img/close.svg"
     }
     let hideButton = document.querySelector('#btn--2');
     hideButton.classList.toggle('hide');
