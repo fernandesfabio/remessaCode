@@ -6,7 +6,7 @@ function menuShow() {
         document.querySelector('.icon').src = "../assets/img/menu.svg"
     }else {
         menuMobile.classList.add('open')
-        document.querySelector('.icon').src = "../assets/img/close.svg"
+        document.querySelector('.icon').src ="../assets/img/close.svg"
     }
     let hideButton = document.querySelector('#btn--2');
     hideButton.classList.toggle('hide');
