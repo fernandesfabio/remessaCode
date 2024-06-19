@@ -1,3 +1,5 @@
+
+/* AÇÕES PÁGINA CONVERSOR */
 const key = "fca_live_rMwakp88F0k0BVUFVWtwtgUPdd2OEsIASXs0KFna";
 const transactionKey = 'transactions';
 const state = {
@@ -7,7 +9,7 @@ const state = {
   base: "BRL",
   target: "USD",
   rates: {},
-  baseValue: 1,
+  baseValue: 0,
 };
 
 //* selectors
@@ -82,8 +84,13 @@ const selectPair = (e) => {
 };
 
 const convertInput = () => {
+  // Pegando o valor do input e removendo vírgulas
   const inputValue = ui.baseInput.value.replace(/,/g, '.');
-  state.baseValue = parseFloat(inputValue) || 1;
+  
+  // Parseando o valor para float e armazenando no estado
+  state.baseValue = parseFloat(inputValue) || 0;
+  
+  // Carregando a taxa de câmbio
   loadExchangeRate();
 };
 
@@ -143,10 +150,15 @@ const updateButtons = () => {
 
 const updateInputs = () => {
   const { base, baseValue, target, rates } = state;
+  
+  // Calculando o valor convertido
   const result = baseValue * rates[base][target];
+  
+  // Atualizando os inputs com os valores sem formatação
   ui.targetInput.value = result.toFixed(2);
-  ui.baseInput.value = baseValue.toFixed(2);
+  ui.baseInput.value = baseValue; // Mantendo o valor sem formatação
 };
+
 
 const updateExchangeRate = () => {
   const { base, target, rates } = state;

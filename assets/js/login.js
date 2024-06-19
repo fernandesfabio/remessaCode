@@ -1,4 +1,6 @@
 
+
+/* AÇÕES PAGINA LOGIN */
 document.addEventListener('DOMContentLoaded', function () {
     const loadingScreen = document.getElementById('loadingScreen');
     const loginMessage = document.getElementById('mensagemLogin');

@@ -1,3 +1,6 @@
+
+
+/* AÇÕES PÁGINA CADASTRO */
 function cadastrarUsuario() {
     const nome = document.getElementById('nome').value;
     const dataNascimento = document.getElementById('data_nascimento').value;
