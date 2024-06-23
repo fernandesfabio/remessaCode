@@ -170,7 +170,7 @@
     }
     .hero {
       background-image: url(../img/1920_hero_conta_global3_d6f4aac96b.png) ;
-      width: 100%;
+      background-size: auto;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -237,10 +237,13 @@
       gap: 30px;
     }
     .phone-text h1 {
-      font-size: 36px;
+      text-align: left;
+      font-size: 2rem;
+      color: var(--black-800);
     }
     .phone-text p{
       font-weight: 600;
+      color: var(--exchange-rate-color);
     }
     /* SECTION CONVERSOR */
    
@@ -348,19 +351,21 @@
       font-size: 1.5rem;
       color: var(--blue-500);
     }
-    
+    .hero button {
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
     .btn--conversor {
       border: none;
       cursor: pointer;
       font-size: 1rem;
     }
-    
     .controls {
       display: grid;
       gap: 20px;
       position: relative;
     }
-    
     .control {
       display: flex;
       background: var(--input-background);
@@ -368,7 +373,6 @@
       border-radius: 10px;
       overflow: hidden;
     }
-    
     .control button {
       --image: url(https://placehold.co/30/teal/white?text=$);
       font-weight: 600;
@@ -378,7 +382,6 @@
       align-items: center;
       gap: 10px;
     }
-    
     .control button::before {
       content: "";
       width: 30px;
@@ -386,17 +389,14 @@
       border-radius: 50%;
       background: var(--blue-500) var(--image) center no-repeat;
     }
-    
     .control button::after {
       font-family: "Material Symbols Outlined";
       font-size: 1.5rem;
       content: "\e5cf";
     }
-    
     .control button:hover {
       color: var(--blue-800);
     }
-    
     .control input {
       font-size: 2.5rem;
       text-align: end;
@@ -406,7 +406,6 @@
       outline: none;
       padding: 10px 20px;
     }
-    
     .control input::-webkit-inner-spin-button,
     .control input::-webkit-outer-spin-button {
       appearance: none;
@@ -427,7 +426,6 @@
       transition: 0.3s;
       cursor: pointer;
     }
-    
     .swap-btn:hover {
       background: var(--blue-800);
     } 
@@ -440,11 +438,9 @@
     .swap-btn:hover span {
       rotate: 270deg;
     }
-    
     .exchange-rate {
       text-align: center;
     }
-    
     .exchange-rate h5 {
       text-transform: uppercase;
       color: var(--blue-500);
@@ -459,12 +455,10 @@
       color: var(--exchange-rate-color);
       font-weight: 500;
     }
-    
     .exchange-rate span:empty {
       min-width: 120px;
       min-height: 1.5rem;
     }
-    
     .drawer {
       position: absolute;
       inset: 0;
@@ -476,16 +470,13 @@
       transform: translateY(100%);
       transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    
     .drawer.show {
       transform: none;
     }
-    
     .title {
       text-align: center;
       position: relative;
     }
-    
     .title button {
       position: absolute;
       top: 50%;
@@ -494,11 +485,9 @@
       background: transparent;
       opacity: 0.5;
     }
-    
     .title button:hover {
       opacity: 1;
     }
-    
     .search input {
       width: 100%;
       font-size: 1rem;
@@ -507,12 +496,10 @@
       border-radius: 10px;
       outline-color: var(--blue-500);
     }
-    
     .currency-list {
       list-style-type: none;
       overflow-y: auto;
     }
-    
     .currency-list li {
       display: flex;
       align-items: center;
@@ -520,20 +507,16 @@
       cursor: pointer;
       padding-block: 5px;
     }
-    
     .currency-list li:first-child {
       padding-block-start: 0;
     }
-    
     /* disable click events for non list item */
     .currency-list *:not(li) {
       pointer-events: none;
     }
-    
     .skeleton {
       position: relative;
     }
-    
     .skeleton::after {
       position: absolute;
       inset: 0;
@@ -550,7 +533,6 @@
         background: var(--loading-bg-2);
       }
     }
-    
     .resultados ul{
       display: none;
       flex-direction: column;
@@ -596,13 +578,11 @@
       align-items: center;
       flex-direction: column;
       padding: 1.5rem 6%;
-      
     }
     .cards__container {
       max-width: 1200px;
       width: 100%;
       padding: 1.5rem 4;
-  
     }
     .cards__container .slide-button {
       display: none;
@@ -656,7 +636,6 @@
       right: -25px;
       
     }
-   
 
     /* SECTION INFOS */
 
@@ -793,13 +772,28 @@
 
 @layer responsive {
   @media only screen and (max-width: 1650px ){
-    /* --------------------- HEADER --------------------- */
+    /* --------------------- Main --------------------- */
     .hero__subtitle {
       font-size: 14px;
      }
     /* -------------------------------------------------- */
   }
   @media only screen and (max-width: 1583px){
+    .hero {
+      background-size: auto;  
+    }
+    .hero__subtitle {
+      font-size: .5rem;
+    }
+    .hero-phone-img img{
+      width: 30rem;
+      margin-right: 20px;
+    }
+    .phone-text h1 {
+      text-align: left;
+    }
+  }
+  @media only screen and (max-width: 1377px ){
     .hero__container {
       flex-direction: column;
     }
@@ -814,27 +808,13 @@
       display: none;
     }
   }
-  @media only screen and (max-width: 1377px ){
-    /* --------------------- HEADER --------------------- */
-
-    /* -------------------------------------------------- */   
-  }
   @media only screen and (max-width: 1266px) {
-    /* --------------------- HEADER --------------------- */
-    .top--info {
-      font-size: 10px;
-    }
-    .hero__title {
-      font-size: 2rem;
-    }
+
+    /* --------------------- MAIN --------------------- */
     .hero__subtitle {
       font-size: 8px;
       line-height: 1.5rem;
     }
-    /* -------------------------------------------------- */
-
-    /* --------------------- MAIN --------------------- */
-
     /* ------------------------------------------------ */
     
     /* --------------------- FOOTER --------------------- */
